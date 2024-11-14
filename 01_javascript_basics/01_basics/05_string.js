@@ -18,3 +18,20 @@ console.log(gameName.indexOf('h'));
 
 const newString = gameName.substring(0,4)
 console.log(newString)
+console.log(gameName.substring(0,4))
+
+const anotherString = gameName.slice(3, 12)
+console.log(gameName.slice(3, 12))
+console.log(anotherString)
+
+const newStringOne = "   kailas  "
+console.log(newStringOne);
+console.log(newStringOne.trim());
+
+const url = "https://hitesh.com/hitesh%20choudhary"
+
+console.log(url.replace('%20', '-'))
+console.log(url.includes('sundar'))
+console.log(url.includes('com'))
+
+console.log(gameName.split('-'));
