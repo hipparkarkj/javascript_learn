@@ -5,19 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html Events</title>
 </head>
-<body>
+<body style="background-color: #414141; color:aliceblue; ">
     <h2>Amazing imaes</h2>
     <div>
         <ul id="images" >
             <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/29421578/pexels-photo-29421578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="photoshop"></li>
-            <li><img width="200px" id="japan" src="" alt=""></li>
-            <li><img width="200px" id="river" src="" alt=""></li>
-            <li><img width="200px" id="owl" src="" alt=""></li>
-            <li><img width="200px" id="prayer" src="" alt=""></li>
-            <li><a href="https://google.com" id="google">Google</a></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532547/pexels-photo-3532547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532543/pexels-photo-3532543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/3532559/pexels-photo-3532559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><a style="color:aliceblue;" href="https://google.com" id="google">Google</a></li>
 
         </ul>
     </div>
     
 </body>
+<script>
+     //document.getElementById('owl').onclick(alert("owl clicked"))
+     // document.getElementById('owl').onclick = function(){
+     //   alert("owl clicked")
+     // }
+     // document.getElementById('owl').addEventListener('click', function(){
+     //    alert("owl clicked again")
+     // },false)
+
+     
+    // attachEvent() used early in time 
+     //JQuery- on eventLister
+    // type of events, timestamp, defaultPrevented
+
+     // target, toelement, srcElement, currentTarget,
+     // clientX, clientY, ScreenX, ScreenY
+     // altkey, ctrlkey ,shiftkey, keyCode 
+
+
+
+    //  document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul")
+
+    //  },  false)
+
+    //  document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked ")
+    //     e.stopPropagation()
+
+    //  }, false)
+
+    //  document.getElementById('google').addEventListener('click',function(e){
+    //     console.log("google clicked");
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //  }, false)
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        if (e.target.tagName === "IMG"){
+            
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+
+        }
+
+        // removeIt.parentNode.removeChild(removeIt)
+
+
+    }, false)
+     
+
+
+     
+
+
+</script>
 </html>
