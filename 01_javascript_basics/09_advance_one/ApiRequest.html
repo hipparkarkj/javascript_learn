@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="insert" style="background-color: #41ff33  ;">
+   <p> 
+    <ul>
+
+    <li>0	UNSENT	Client has been created. open() not called yet.</li>
+    <li>1	OPENED	open() has been called.</li>
+    <li>2	HEADERS_RECEIVED	send() has been called, and headers and status are available.</li>
+    <li>3	LOADING	Downloading; responseText holds partial data.</li>
+    <li>4	DONE	The operation is complete.</li>
+    </ul>
+</p>
+</body>
+<script>
+    let followers;
+    let photoUrl;
+    const requestUrl ='https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    //console.log(xhr.readyState);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            followers = data.followers
+            photoUrl = data.avatar_url;
+            console.log(typeof data);
+            console.log(followers);
+            console.log(photoUrl);
+
+            const b = document.getElementById('insert');
+    console.log(b);
+    b.innerHTML +=  `
+    <div class='color'>
+    <table>
+    <tr>
+      <th>Folloers</th>
+      
+      <img src=${photoUrl} alt="image">
+
+    </tr>
+    <td>${followers}</td>
+   
+    
+  </table>
+    </div>`;
+        }
+    }
+    xhr.send();
+    
+   
+</script>
+
+
+</html>
