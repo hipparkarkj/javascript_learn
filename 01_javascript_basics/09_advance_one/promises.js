@@ -98,6 +98,11 @@ fetch('https://api.github.com/users/hiteshchoudhary')
 })
 .catch((error) => console.log(error))
 
+
+fetch("https://api.github.com/users/hiteshchoudhary",{mode: "no-cors"}).then((response) => {
+    console.log("Online");
+  }).catch(e => { console.log("Offline")});
+
 //promise.all
 
 //yes this is also avilable, kuch reading aap b karo. ok i will do

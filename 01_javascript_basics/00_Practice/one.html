@@ -1,0 +1,47 @@
+<!Doctype html>
+<html>
+<style>
+    #container {
+    width: 900px;
+    height: 900px;
+    position: relative;
+    background: yellow;
+    }
+    #animate2 {
+    width: 100px;
+    height: 900px;
+    position: absolute;
+    background: greenyellow;
+    color:black;
+    }
+    #animate {
+    width: 900px;
+    height: 100px;
+    position: absolute;
+    background: red;
+    color:black;
+    }
+    
+</style>
+<body>
+
+<h2>My First JavaScript Animation</h2>
+
+    <div id="container">
+        <div id ="animate2"></div>
+        <div id="animate"></div>
+        
+    </div>
+
+</body>
+<script>
+    let objHead = ["Home", "About", "Contact US"];
+    for (let i in objHead){
+        let k = document.getElementById('animate')
+        k.innerHTML += `<h2><div>  ${objHead[i]} </div></h2>`
+        console.log(objHead[i])
+
+    }
+    //document.body.innerHTML += `<h2> kailas ${objHead} </h2>`
+</script>
+</html>
