@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #1b6f88;
+            font-family: 'Roboto',sans-serif;
+            
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+
+        }
+        h1 {
+            text-align: center;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        input[type="text"] {
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 70%;
+            margin-right: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <h1>To Do List</h1>
+        <form>
+          <input type="text" id="todo-input" placeholder="Add a new task...">
+          <button type="submit" id="add-button">Add</button>
+        </form>
+        <ul id="todo-list">
+        </ul>
+      </div>
+
+</body>
+</html>
+  
